@@ -14,9 +14,9 @@ module.exports = async function (context, req) {
     
         context.res = {
             status: 200, /* Defaults to 200 */
-            body: responseMessage,
+            body: data,
             // test: "test"
-            data: data
+            // data: data
         };
     } catch(err){
         context.log(err, "this is the error");
