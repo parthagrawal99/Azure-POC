@@ -6,7 +6,7 @@ module.exports = async function (context, req) {
         let res1 = await axios.get('https://cat-fact.herokuapp.com/facts/');
     
         let data = res1.data;
-        console.log(data, "------------- data");
+        context.log(data, "------------- data");
         const name = (req.query.name || (req.body && req.body.name));
         const responseMessage = name
             ? "Hello----------, " + name + ". This HTTP triggered function executed successfully."
