@@ -15,6 +15,9 @@ module.exports = async function (context, req) {
         context.res = {
             status: 200, /* Defaults to 200 */
             body: data,
+            headers: {
+                "content-type": "application/json"
+            }
             // test: "test"
             // data: data
         };
@@ -22,10 +25,10 @@ module.exports = async function (context, req) {
         context.log(err, "this is the error");
         context.res = {
             status: 500, /* Defaults to 200 */
-            // body: responseMessage,
-            test: "test",
-            // data: data,
-            err:err
+            body: err,
+            headers: {
+                "content-type": "application/json"
+            }
         };
     }
 }
