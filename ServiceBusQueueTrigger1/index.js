@@ -1,4 +1,4 @@
-// import {getToken} from './auth';
+import {getToken} from './auth';
 const axios = require('axios');
 module.exports = async function(context, mySbMsg) {
     try{
