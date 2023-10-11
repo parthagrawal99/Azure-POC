@@ -21,8 +21,8 @@ const salesforceConfig = {
 // const kVClient = new SecretClient(kVUri,new DefaultAzureCredentail());
 
 
-async function getToken() {
-    
+async function getToken(context) {
+    context.log("get token function called---------------")
     // if (salesforceConfig.tokenExpiration > Date.now()) {
     //     return salesforceConfig.accessToken;
     // } else {
@@ -36,7 +36,7 @@ async function getToken() {
                 },
             });
 
-
+            context.log(response.data, "------------------ response data getToken")
             // Update access token
             salesforceConfig.accessToken = response.data.access_token;
 

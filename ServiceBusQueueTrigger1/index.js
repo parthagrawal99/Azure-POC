@@ -3,17 +3,18 @@ const axios = require('axios');
 module.exports = async function(context, mySbMsg) {
     try{
         context.log('JavaScript ServiceBus queue trigger function processed message', mySbMsg);
-        let token = await getToken();
-        const response = await axios.post('https://dream-nosoftware-499.my.salesforce.com/services/data/v25.0/sobjects/Contact/', {
-            "FirstName":"Parth",
-            "LastName":"Agrawal",
-            "Email":"parthagrawaltest@gmail.com",
-            "Phone":"0099887766778"
-        }, {headers: {
-            Authorization: `Bearer ${token}`
-        }});
+        let token = await getToken(context);
+        context.log(token, "00000000000 token");
+        // const response = await axios.post('https://dream-nosoftware-499.my.salesforce.com/services/data/v25.0/sobjects/Contact/', {
+        //     "FirstName":"Parth",
+        //     "LastName":"Agrawal",
+        //     "Email":"parthagrawaltest@gmail.com",
+        //     "Phone":"0099887766778"
+        // }, {headers: {
+        //     Authorization: `Bearer ${token}`
+        // }});
     
-        context.log(response.data, "------------------ response data")
+        // context.log(response.data, "------------------ response data")
 
     } catch(err){
         context.log('JavaScript ServiceBus queue trigger function processed message err', err);
