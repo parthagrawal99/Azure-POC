@@ -1,5 +1,5 @@
 // import {getToken} from './auth';
-// const axios = require('axios');
+const axios = require('axios');
 module.exports = async function(context, mySbMsg) {
     context.log('JavaScript ServiceBus queue trigger function processed message', mySbMsg);
     // let token = await getToken();
